@@ -1,1 +1,984 @@
-<div>Hello</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WeBIM Consultancy Pte. Ltd. | Sharpen Your Cost</title>
+  <meta name="description" content="WeBIM Consultancy Pte. Ltd. — BIM, Quantity Surveying and Construction Consultancy in Singapore.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --blue: #0756a6;
+      --blue-2: #138bd2;
+      --cyan: #12b7d8;
+      --orange: #f28a00;
+      --ink: #17324d;
+      --muted: #61748a;
+      --line: #dfeaf3;
+      --soft: #f5faff;
+      --white: #ffffff;
+      --shadow: 0 20px 60px rgba(26, 81, 126, .10);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Inter, Arial, sans-serif;
+      color: var(--ink);
+      background: #fff;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(1180px, calc(100% - 44px));
+      margin: 0 auto;
+    }
+
+    /* NAV */
+    .nav-wrap {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      padding: 16px 0;
+      transition: .25s ease;
+    }
+    .nav-wrap.scrolled {
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 8px 30px rgba(22,75,115,.07);
+    }
+    nav {
+      height: 72px;
+      padding: 0 18px;
+      background: rgba(255,255,255,.82);
+      border: 1px solid rgba(211,229,241,.85);
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 8px 30px rgba(20,83,125,.06);
+      backdrop-filter: blur(14px);
+    }
+    .brand img { width: 265px; height: auto; }
+    .links {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #42617b;
+    }
+    .links a:hover { color: var(--blue); }
+    .nav-cta {
+      background: var(--blue);
+      color: #fff !important;
+      padding: 12px 18px;
+      border-radius: 11px;
+      box-shadow: 0 8px 20px rgba(7,86,166,.18);
+    }
+    .menu {
+      display: none;
+      border: 0;
+      background: transparent;
+      font-size: 27px;
+      color: var(--blue);
+      cursor: pointer;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      min-height: 760px;
+      padding: 170px 0 100px;
+      background:
+        radial-gradient(circle at 80% 20%, rgba(18,183,216,.13), transparent 28%),
+        radial-gradient(circle at 8% 75%, rgba(7,86,166,.08), transparent 30%),
+        linear-gradient(180deg, #f8fcff 0%, #fff 82%);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.02fr .98fr;
+      align-items: center;
+      gap: 70px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      gap: 9px;
+      align-items: center;
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2.2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 3px;
+      border-radius: 4px;
+      background: linear-gradient(90deg,var(--orange),var(--cyan));
+    }
+    h1 {
+      font-family: Manrope, Inter, sans-serif;
+      font-size: clamp(48px, 6.2vw, 78px);
+      line-height: 1.02;
+      letter-spacing: -3.2px;
+      color: #123554;
+      max-width: 690px;
+    }
+    h1 .accent {
+      background: linear-gradient(90deg, var(--blue), var(--blue-2), var(--cyan));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .hero-copy {
+      margin-top: 25px;
+      max-width: 610px;
+      font-size: 18px;
+      color: var(--muted);
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 34px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 21px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 700;
+      transition: .22s ease;
+    }
+    .btn-primary {
+      color: #fff;
+      background: linear-gradient(135deg, var(--blue), var(--blue-2));
+      box-shadow: 0 12px 26px rgba(7,86,166,.20);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 16px 32px rgba(7,86,166,.25); }
+    .btn-secondary {
+      color: var(--blue);
+      background: #fff;
+      border: 1px solid #cfe0ed;
+    }
+    .btn-secondary:hover { border-color: var(--blue-2); background: #f5fbff; }
+
+    /* BIM VISUAL */
+    .visual {
+      position: relative;
+      min-height: 500px;
+    }
+    .visual-card {
+      position: absolute;
+      border: 1px solid rgba(170,204,225,.75);
+      background: rgba(255,255,255,.78);
+      backdrop-filter: blur(15px);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+    .model {
+      inset: 28px 10px 45px 20px;
+      padding: 20px;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(18,139,210,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(18,139,210,.06) 1px, transparent 1px),
+        #f7fcff;
+      background-size: 30px 30px;
+    }
+    .model::before {
+      content: "";
+      position: absolute;
+      width: 290px;
+      height: 210px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%) perspective(500px) rotateX(58deg) rotateZ(-36deg);
+      background:
+        linear-gradient(90deg, rgba(7,86,166,.78) 1px, transparent 1px),
+        linear-gradient(rgba(7,86,166,.78) 1px, transparent 1px);
+      background-size: 32px 32px;
+      border: 3px solid rgba(7,86,166,.8);
+      box-shadow: 50px -42px 0 -2px rgba(18,183,216,.15);
+    }
+    .model::after {
+      content: "BIM MODEL";
+      position: absolute;
+      top: 19px;
+      left: 21px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.8px;
+      color: var(--blue);
+    }
+    .data-card {
+      width: 245px;
+      right: -4px;
+      bottom: 8px;
+      padding: 18px;
+    }
+    .data-card .mini-title {
+      font-size: 10px;
+      color: #7a91a5;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+    .cost {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      margin-top: 6px;
+    }
+    .cost strong { font-size: 28px; color: var(--blue); }
+    .cost span { font-size: 11px; color: #1c9c74; font-weight: 700; }
+    .bar {
+      height: 7px;
+      background: #e9f2f7;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 12px;
+    }
+    .bar i {
+      display: block;
+      width: 73%;
+      height: 100%;
+      border-radius: 10px;
+      background: linear-gradient(90deg,var(--blue),var(--cyan));
+    }
+    .floating {
+      top: 0;
+      right: 20px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #385a73;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--orange);
+      box-shadow: 0 0 0 5px rgba(242,138,0,.12);
+    }
+
+    /* TRUST STRIP */
+    .trust {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: #fff;
+    }
+    .trust-row {
+      min-height: 92px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+      color: #71869a;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+    }
+
+    /* GENERAL */
+    section { padding: 105px 0; }
+    .section-kicker {
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2.4px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-family: Manrope, Inter, sans-serif;
+      font-size: clamp(36px, 4.4vw, 56px);
+      line-height: 1.08;
+      letter-spacing: -2px;
+      color: #143a59;
+    }
+    .section-lead {
+      color: var(--muted);
+      max-width: 680px;
+      margin-top: 18px;
+      font-size: 16px;
+    }
+
+    /* ABOUT */
+    .about {
+      background: #fff;
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 90px;
+      align-items: center;
+    }
+    .about-panel {
+      padding: 35px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background:
+        radial-gradient(circle at 90% 5%, rgba(18,183,216,.11), transparent 27%),
+        #f8fcff;
+    }
+    .about-panel h3 {
+      font-family: Manrope, sans-serif;
+      font-size: 28px;
+      line-height: 1.25;
+      color: #164b71;
+      margin-bottom: 18px;
+    }
+    .about-panel p { color: var(--muted); }
+    .check-list {
+      list-style: none;
+      display: grid;
+      gap: 13px;
+      margin-top: 23px;
+    }
+    .check-list li {
+      display: flex;
+      gap: 11px;
+      align-items: start;
+      color: #35536b;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .check-list li::before {
+      content: "✓";
+      color: var(--blue);
+      font-weight: 900;
+    }
+
+    /* SERVICES */
+    .services { background: var(--soft); }
+    .service-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 50px;
+      align-items: end;
+      margin-bottom: 50px;
+    }
+    .service-head .section-lead { margin-top: 0; max-width: 480px; }
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 18px;
+    }
+    .service {
+      position: relative;
+      min-height: 255px;
+      padding: 29px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 19px;
+      transition: .22s ease;
+      overflow: hidden;
+    }
+    .service:hover {
+      transform: translateY(-5px);
+      border-color: #b8d8eb;
+      box-shadow: var(--shadow);
+    }
+    .service::after {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      right: -40px;
+      bottom: -45px;
+      border-radius: 50%;
+      background: rgba(18,183,216,.07);
+    }
+    .service-num {
+      color: #a0b5c6;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+    }
+    .service h3 {
+      font-family: Manrope, sans-serif;
+      font-size: 21px;
+      margin: 37px 0 11px;
+      color: #174665;
+    }
+    .service p { color: var(--muted); font-size: 14px; }
+
+    /* BIM + QS */
+    .integration {
+      background: #fff;
+    }
+    .integration-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 75px;
+      align-items: center;
+    }
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 13px;
+      margin-top: 30px;
+    }
+    .flow-item {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: #fbfdff;
+    }
+    .flow-item strong { display: block; color: #17517a; font-size: 14px; margin-bottom: 4px; }
+    .flow-item span { color: #7b8fa1; font-size: 12px; }
+    .integration-visual {
+      min-height: 450px;
+      border-radius: 26px;
+      padding: 25px;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(18,183,216,.22), transparent 25%),
+        linear-gradient(145deg,#edf8ff,#fff);
+      border: 1px solid var(--line);
+      position: relative;
+      overflow: hidden;
+    }
+    .integration-visual .ring {
+      position: absolute;
+      width: 340px;
+      height: 340px;
+      border: 1px solid rgba(7,86,166,.16);
+      border-radius: 50%;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+    }
+    .integration-visual .ring.r2 {
+      width: 250px; height: 250px;
+      border-color: rgba(18,183,216,.22);
+    }
+    .hub {
+      position: absolute;
+      width: 145px;
+      height: 145px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      border-radius: 26px;
+      background: linear-gradient(145deg,var(--blue),var(--cyan));
+      color: #fff;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      font-family: Manrope, sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      box-shadow: 0 20px 45px rgba(7,86,166,.25);
+    }
+    .node {
+      position: absolute;
+      padding: 11px 14px;
+      background: #fff;
+      border: 1px solid #cfe3ef;
+      border-radius: 12px;
+      color: #31536d;
+      font-size: 11px;
+      font-weight: 800;
+      box-shadow: 0 10px 30px rgba(31,86,124,.08);
+    }
+    .n1 { top: 55px; left: 34px; }
+    .n2 { top: 70px; right: 28px; }
+    .n3 { bottom: 70px; left: 35px; }
+    .n4 { bottom: 50px; right: 34px; }
+    .n5 { top: 50%; left: 12px; transform: translateY(-50%); }
+
+    /* PROJECTS */
+    .projects { background: #f8fbfd; }
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1.25fr .75fr .75fr;
+      gap: 17px;
+      margin-top: 48px;
+    }
+    .project {
+      min-height: 330px;
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(135deg,rgba(7,86,166,.85),rgba(18,183,216,.45)),
+        repeating-linear-gradient(0deg,transparent 0 28px,rgba(255,255,255,.10) 29px 30px);
+    }
+    .project:nth-child(2) {
+      background:
+        linear-gradient(135deg,rgba(242,138,0,.82),rgba(18,183,216,.55)),
+        repeating-linear-gradient(90deg,transparent 0 28px,rgba(255,255,255,.12) 29px 30px);
+    }
+    .project:nth-child(3) {
+      background:
+        linear-gradient(135deg,rgba(22,75,113,.85),rgba(7,86,166,.48)),
+        repeating-linear-gradient(45deg,transparent 0 25px,rgba(255,255,255,.10) 26px 27px);
+    }
+    .project::before {
+      content: "PROJECT IMAGE";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: rgba(255,255,255,.38);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+    .project-info {
+      position: absolute;
+      z-index: 2;
+      left: 0; right: 0; bottom: 0;
+      padding: 25px;
+      color: #fff;
+      background: linear-gradient(transparent,rgba(9,40,63,.88));
+    }
+    .project-info span { font-size: 10px; letter-spacing: 1.3px; font-weight: 800; opacity: .8; }
+    .project-info h3 { font-family: Manrope,sans-serif; font-size: 20px; margin-top: 5px; }
+
+    /* STATS */
+    .stats {
+      padding: 75px 0;
+      background: #fff;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 30px;
+    }
+    .stat { padding-right: 25px; border-right: 1px solid var(--line); }
+    .stat:last-child { border-right: 0; }
+    .stat strong {
+      display: block;
+      font-family: Manrope,sans-serif;
+      font-size: 42px;
+      color: var(--blue);
+      letter-spacing: -1.5px;
+    }
+    .stat span { color: #71879a; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+
+    /* CTA */
+    .cta {
+      padding: 105px 0;
+      background:
+        radial-gradient(circle at 80% 20%,rgba(18,183,216,.18),transparent 27%),
+        linear-gradient(135deg,#edf8ff,#f8fcff);
+    }
+    .cta-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+      padding: 50px;
+      border: 1px solid #cfe4f0;
+      border-radius: 27px;
+      background: rgba(255,255,255,.78);
+      box-shadow: var(--shadow);
+    }
+    .cta-box h2 {
+      font-family: Manrope,sans-serif;
+      font-size: clamp(34px,4vw,50px);
+      line-height: 1.08;
+      letter-spacing: -1.8px;
+      color: #143a59;
+    }
+    .cta-box p { margin-top: 12px; color: var(--muted); }
+
+    /* FOOTER */
+    footer {
+      padding: 55px 0 28px;
+      background: #f6fafc;
+      border-top: 1px solid var(--line);
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr .8fr;
+      gap: 60px;
+      padding-bottom: 42px;
+    }
+    .footer-logo { width: 270px; }
+    .footer-copy { margin-top: 15px; color: #70869a; font-size: 13px; max-width: 370px; }
+    footer h4 { font-size: 12px; letter-spacing: 1.3px; text-transform: uppercase; color: #46657c; margin-bottom: 15px; }
+    footer a, footer p { color: #70869a; font-size: 13px; }
+    .footer-links { display: grid; gap: 8px; }
+    .copyright {
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+      color: #8aa0b2;
+      font-size: 11px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    @media (max-width: 900px) {
+      .links { display: none; }
+      .menu { display: block; }
+      .hero-grid, .about-grid, .integration-grid { grid-template-columns: 1fr; }
+      .hero { padding-top: 140px; }
+      .visual { min-height: 470px; }
+      .service-grid { grid-template-columns: repeat(2,1fr); }
+      .project-grid { grid-template-columns: 1fr 1fr; }
+      .project:first-child { grid-column: 1 / -1; }
+      .stats-grid { grid-template-columns: repeat(2,1fr); }
+      .stat:nth-child(2) { border-right: 0; }
+      .stat { border-bottom: 1px solid var(--line); padding-bottom: 20px; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .footer-top > div:first-child { grid-column: 1 / -1; }
+      .cta-box { align-items: start; flex-direction: column; }
+    }
+
+    @media (max-width: 620px) {
+      .container { width: min(100% - 28px,1180px); }
+      nav { height: 64px; }
+      .brand img { width: 205px; }
+      h1 { letter-spacing: -2px; }
+      section { padding: 78px 0; }
+      .hero { min-height: auto; padding-bottom: 75px; }
+      .hero-copy { font-size: 16px; }
+      .visual { min-height: 390px; }
+      .model { inset: 20px 0 30px 0; }
+      .data-card { right: 0; }
+      .floating { right: 0; }
+      .trust-row { flex-wrap: wrap; justify-content: center; padding: 24px 0; text-align: center; }
+      .service-grid, .project-grid, .stats-grid, .flow { grid-template-columns: 1fr; }
+      .project:first-child { grid-column: auto; }
+      .stat { border-right: 0; }
+      .cta-box { padding: 30px; }
+      .footer-top { grid-template-columns: 1fr; }
+      .footer-top > div:first-child { grid-column: auto; }
+      .copyright { flex-direction: column; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="nav-wrap" id="navbar">
+    <div class="container">
+      <nav>
+        <a href="#home" class="brand" aria-label="WeBIM Consultancy home">
+          <img src="logo.png" alt="WeBIM Consultancy Pte. Ltd. — Sharpen Your Cost">
+        </a>
+
+        <div class="links">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#bim">BIM + QS</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact" class="nav-cta">Contact Us</a>
+        </div>
+
+        <button class="menu" id="menuBtn" aria-label="Open navigation">☰</button>
+      </nav>
+    </div>
+  </div>
+
+  <main>
+
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">BIM · Quantity Surveying · Consultancy</div>
+          <h1>Sharper <span class="accent">cost.</span><br>Smarter <span class="accent">construction.</span></h1>
+          <p class="hero-copy">
+            WeBIM Consultancy combines Building Information Modelling,
+            quantity surveying and commercial expertise to bring clearer
+            information and stronger cost control to every project.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Start a Conversation →</a>
+            <a class="btn btn-secondary" href="#services">Explore Our Services</a>
+          </div>
+        </div>
+
+        <div class="visual" aria-label="BIM and cost management visual">
+          <div class="visual-card model"></div>
+
+          <div class="visual-card floating">
+            <span class="dot"></span>
+            BIM + 5D Cost Integration
+          </div>
+
+          <div class="visual-card data-card">
+            <div class="mini-title">Cost Intelligence</div>
+            <div class="cost">
+              <strong>$8.42M</strong>
+              <span>+ 12.4%</span>
+            </div>
+            <div class="bar"><i></i></div>
+            <div style="margin-top:9px;font-size:10px;color:#7890a4;">Model-linked quantity & cost data</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust">
+      <div class="container trust-row">
+        <span>Building Information Modelling</span>
+        <span>Quantity Surveying</span>
+        <span>Cost Consultancy</span>
+        <span>Digital Construction</span>
+      </div>
+    </div>
+
+    <section class="about" id="about">
+      <div class="container about-grid">
+        <div>
+          <div class="section-kicker">About WeBIM</div>
+          <h2 class="section-title">Where digital information meets commercial intelligence.</h2>
+          <p class="section-lead">
+            WeBIM Consultancy Pte. Ltd. is built around a simple idea:
+            better project information leads to better commercial decisions.
+          </p>
+        </div>
+
+        <div class="about-panel">
+          <h3>We connect the model, the measurement and the money.</h3>
+          <p>
+            Our approach brings BIM and Quantity Surveying closer together,
+            helping project teams understand scope, quantities, costs and
+            construction implications earlier and with greater confidence.
+          </p>
+          <ul class="check-list">
+            <li>Clearer quantities from coordinated digital models</li>
+            <li>Earlier visibility of design and cost changes</li>
+            <li>Structured information for procurement and tendering</li>
+            <li>Commercial support throughout the project lifecycle</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <div class="service-head">
+          <div>
+            <div class="section-kicker">Our Services</div>
+            <h2 class="section-title">One consultancy.<br>Multiple project needs.</h2>
+          </div>
+          <p class="section-lead">
+            From design development to final account, WeBIM provides
+            integrated technical and commercial support.
+          </p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service">
+            <div class="service-num">01 / BIM</div>
+            <h3>BIM Modelling</h3>
+            <p>Architectural, structural and MEP modelling with project information structured for coordination and delivery.</p>
+          </article>
+
+          <article class="service">
+            <div class="service-num">02 / BIM</div>
+            <h3>BIM Coordination</h3>
+            <p>Model review, clash detection and interdisciplinary coordination to reduce construction uncertainty.</p>
+          </article>
+
+          <article class="service">
+            <div class="service-num">03 / QS</div>
+            <h3>Quantity Surveying</h3>
+            <p>Measurement, bills of quantities, progress valuations, variations, cost reporting and final accounts.</p>
+          </article>
+
+          <article class="service">
+            <div class="service-num">04 / COST</div>
+            <h3>Cost Consultancy</h3>
+            <p>Feasibility studies, cost planning, budget control and independent commercial advice throughout design.</p>
+          </article>
+
+          <article class="service">
+            <div class="service-num">05 / TENDER</div>
+            <h3>Tender & Procurement</h3>
+            <p>Tender documentation, BOQ preparation, tender analysis and commercial comparison to support procurement decisions.</p>
+          </article>
+
+          <article class="service">
+            <div class="service-num">06 / DIGITAL</div>
+            <h3>5D & Digital Construction</h3>
+            <p>Connecting quantities and cost information with BIM workflows for more transparent project decision-making.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="integration" id="bim">
+      <div class="container integration-grid">
+        <div>
+          <div class="section-kicker">Our Advantage</div>
+          <h2 class="section-title">BIM + QS.<br>A more connected way to manage cost.</h2>
+          <p class="section-lead">
+            We translate digital building information into measurable,
+            commercial information — helping clients see what is being
+            built, how much it represents and how changes affect cost.
+          </p>
+
+          <div class="flow">
+            <div class="flow-item"><strong>01 · Model</strong><span>Build reliable digital information</span></div>
+            <div class="flow-item"><strong>02 · Measure</strong><span>Extract and validate quantities</span></div>
+            <div class="flow-item"><strong>03 · Price</strong><span>Develop cost and tender information</span></div>
+            <div class="flow-item"><strong>04 · Control</strong><span>Monitor changes and commercial impact</span></div>
+          </div>
+        </div>
+
+        <div class="integration-visual">
+          <div class="ring"></div>
+          <div class="ring r2"></div>
+          <div class="hub">BIM<br>+<br>QS</div>
+          <div class="node n1">3D MODEL</div>
+          <div class="node n2">QUANTITIES</div>
+          <div class="node n3">COST PLAN</div>
+          <div class="node n4">TENDER</div>
+          <div class="node n5">CONTROL</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects" id="projects">
+      <div class="container">
+        <div class="section-kicker">Selected Work</div>
+        <h2 class="section-title">Built around real project challenges.</h2>
+        <p class="section-lead">
+          Replace these placeholders with your actual project photographs,
+          project values, services and outcomes.
+        </p>
+
+        <div class="project-grid">
+          <article class="project">
+            <div class="project-info">
+              <span>COMMERCIAL · BIM + QS</span>
+              <h3>Commercial Development</h3>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-info">
+              <span>RESIDENTIAL · COST</span>
+              <h3>Residential Development</h3>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-info">
+              <span>INSTITUTIONAL · BIM</span>
+              <h3>Institutional Project</h3>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="container stats-grid">
+        <div class="stat"><strong>10+</strong><span>Years Experience</span></div>
+        <div class="stat"><strong>50+</strong><span>Projects Supported</span></div>
+        <div class="stat"><strong>5D</strong><span>Digital Cost Thinking</span></div>
+        <div class="stat"><strong>1</strong><span>Integrated Approach</span></div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="container">
+        <div class="cta-box">
+          <div>
+            <div class="section-kicker">Let's Work Together</div>
+            <h2>Have a project?<br>Let's sharpen the cost.</h2>
+            <p>Tell us about your project and the challenges you are facing.</p>
+          </div>
+          <a class="btn btn-primary" href="mailto:hello@webim.com.sg">Request a Consultation →</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <img class="footer-logo" src="logo.png" alt="WeBIM Consultancy Pte. Ltd.">
+          <p class="footer-copy">
+            BIM, Quantity Surveying and Construction Consultancy —
+            helping project teams make sharper commercial decisions.
+          </p>
+        </div>
+
+        <div>
+          <h4>Explore</h4>
+          <div class="footer-links">
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#bim">BIM + QS</a>
+            <a href="#projects">Projects</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Contact</h4>
+          <div class="footer-links">
+            <a href="mailto:hello@webim.com.sg">hello@webim.com.sg</a>
+            <p>Singapore</p>
+            <p>WeBIM Consultancy Pte. Ltd.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <span>© 2026 WeBIM Consultancy Pte. Ltd. All Rights Reserved.</span>
+        <span>Sharpen Your Cost.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    const menuBtn = document.getElementById('menuBtn');
+    const links = document.querySelector('.links');
+
+    menuBtn.addEventListener('click', () => {
+      const open = links.style.display === 'flex';
+      links.style.display = open ? '' : 'flex';
+      if (!open) {
+        links.style.position = 'absolute';
+        links.style.top = '82px';
+        links.style.left = '14px';
+        links.style.right = '14px';
+        links.style.padding = '18px';
+        links.style.flexDirection = 'column';
+        links.style.alignItems = 'stretch';
+        links.style.background = '#fff';
+        links.style.border = '1px solid #dfeaf3';
+        links.style.borderRadius = '16px';
+        links.style.boxShadow = '0 20px 40px rgba(26,81,126,.12)';
+      }
+    });
+  </script>
+</body>
+</html>
