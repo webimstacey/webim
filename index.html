@@ -1,984 +1,329 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WeBIM Consultancy Pte. Ltd. | Sharpen Your Cost</title>
-  <meta name="description" content="WeBIM Consultancy Pte. Ltd. — BIM, Quantity Surveying and Construction Consultancy in Singapore.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WeBIM Consultancy — BIM-Integrated QS Services</title>
+<meta name="description" content="WeBIM Consultancy Pte Ltd — BIM-Integrated QS Services">
+<style>
+:root{--ink:#111827;--muted:#64748b;--line:#e2e8f0;--paper:#f8fafc;--white:#fff;--accent:#1d4ed8;--accent2:#0f172a;--soft:#eff6ff;--radius:22px;--shadow:0 20px 60px rgba(15,23,42,.10)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}a{color:inherit;text-decoration:none}button{font:inherit}
+.container{width:min(1180px,calc(100% - 40px));margin:auto}.nav{position:fixed;z-index:20;top:0;left:0;right:0;background:rgba(248,250,252,.82);backdrop-filter:blur(18px);border-bottom:1px solid rgba(226,232,240,.8)}.navin{height:72px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:850;letter-spacing:-.04em;font-size:21px}.brand span{color:var(--accent)}.links{display:flex;gap:25px;font-size:13px;font-weight:700;color:#475569}.links a{padding:8px 0}.links a.active{color:var(--accent)}.menu{display:none;border:0;background:none;font-size:25px}
+.hero{min-height:92vh;display:grid;align-items:center;padding:130px 0 80px;position:relative;overflow:hidden;background:radial-gradient(circle at 85% 20%,#dbeafe 0,transparent 34%),linear-gradient(180deg,#fff,#f8fafc)}.hero:after{content:"";position:absolute;right:-10%;bottom:-30%;width:58vw;height:58vw;border-radius:50%;background:linear-gradient(135deg,rgba(29,78,216,.11),rgba(15,23,42,.02));filter:blur(2px)}.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:70px;align-items:center;position:relative;z-index:1}.eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:12px;font-weight:850;color:var(--accent);margin-bottom:18px}.hero h1{font-size:clamp(48px,7vw,88px);line-height:.98;letter-spacing:-.065em;margin:0 0 25px;max-width:760px}.hero h1 em{font-style:normal;color:var(--accent)}.lead{font-size:18px;color:#475569;max-width:650px}.cta{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;gap:9px;padding:13px 18px;border-radius:999px;border:1px solid var(--line);font-weight:800;font-size:14px;background:white}.btn.primary{background:var(--ink);color:white;border-color:var(--ink)}.hero-card{border-radius:32px;overflow:hidden;box-shadow:var(--shadow);background:#0b1220;aspect-ratio:1.12;position:relative}.hero-card img{width:100%;height:100%;object-fit:cover;opacity:.72}.hero-card .overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(2,6,23,.82))}.hero-note{position:absolute;left:28px;bottom:24px;color:#fff;right:28px}.hero-note b{font-size:26px;display:block;letter-spacing:-.03em}.hero-note small{opacity:.75}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 12px 40px rgba(15,23,42,.05)}.stat{background:#fff;padding:24px}.stat strong{font-size:30px;letter-spacing:-.05em}.stat span{display:block;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+section{padding:105px 0}.section-head{display:flex;justify-content:space-between;gap:40px;align-items:end;margin-bottom:42px}.kicker{font-size:12px;font-weight:850;letter-spacing:.18em;color:var(--accent);text-transform:uppercase}.section-head h2{font-size:clamp(36px,5vw,58px);letter-spacing:-.06em;line-height:1;margin:8px 0 0}.section-head p{max-width:470px;color:var(--muted);margin:0}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:22px}.panel{background:white;border:1px solid var(--line);border-radius:var(--radius);padding:32px;box-shadow:0 12px 35px rgba(15,23,42,.04)}.panel h3{margin-top:0;font-size:23px;letter-spacing:-.03em}.facts{display:grid;gap:16px}.fact{display:flex;gap:15px}.fact b{min-width:115px}.fact span{color:var(--muted)}
+.objective{margin-top:22px;background:var(--ink);color:#fff;border-radius:28px;padding:38px;display:grid;grid-template-columns:1fr 1fr;gap:30px}.objective h3{font-size:34px;letter-spacing:-.04em;margin:0}.quad{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.quad div{border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:18px;background:rgba(255,255,255,.04)}.quad b{display:block;font-size:20px}.quad span{font-size:12px;color:#cbd5e1}
+.values{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.value{background:white;border:1px solid var(--line);border-radius:18px;padding:23px;min-height:150px}.value b{font-size:17px}.value p{font-size:13px;color:var(--muted);margin-bottom:0}.trust{margin-top:22px;border-left:4px solid var(--accent);padding:20px 24px;background:var(--soft);border-radius:0 16px 16px 0;font-size:20px;font-weight:750}
+.services{display:grid;grid-template-columns:1fr 1fr;gap:18px}.service{background:white;border:1px solid var(--line);border-radius:20px;overflow:hidden}.service button{width:100%;border:0;background:white;padding:23px 25px;display:flex;justify-content:space-between;align-items:center;text-align:left;cursor:pointer}.service button b{font-size:18px}.service button span{font-size:24px;color:var(--accent)}.service-body{padding:0 25px 25px;color:var(--muted);display:none}.service.open .service-body{display:block}.service ul{margin:0;padding-left:19px}.service li{margin:9px 0}.service.open button{background:#f8fbff}
+.clients{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.client{height:130px;background:#fff;border:1px solid var(--line);border-radius:18px;display:flex;align-items:center;justify-content:center;padding:20px}.client img{max-width:100%;max-height:75px;object-fit:contain}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}.filter{border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 14px;font-weight:800;font-size:12px;cursor:pointer}.filter.active{background:var(--ink);color:white;border-color:var(--ink)}.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.project{background:white;border:1px solid var(--line);border-radius:20px;overflow:hidden;cursor:pointer;transition:.25s transform,.25s box-shadow}.project:hover{transform:translateY(-5px);box-shadow:var(--shadow)}.project.hide{display:none}.project-media{height:205px;background:#0b1220;overflow:hidden}.project-media img{width:100%;height:100%;object-fit:cover;transition:.35s}.project:hover .project-media img{transform:scale(1.04)}.project-content{padding:21px}.tag{display:inline-flex;font-size:10px;font-weight:850;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);background:var(--soft);padding:5px 8px;border-radius:999px}.project h3{font-size:18px;line-height:1.2;margin:12px 0 10px;letter-spacing:-.03em}.project .metric{font-weight:900;font-size:20px}.project .metric small{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}.project p{font-size:12px;color:var(--muted);margin:10px 0 0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.past-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.past-item{background:#fff;border:1px solid var(--line);border-radius:15px;padding:18px 20px}.past-item b{display:block;font-size:14px}.past-item span{font-size:12px;color:var(--muted)}
+.benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.benefit{background:white;border:1px solid var(--line);border-radius:20px;padding:24px}.benefit .num{font-size:12px;color:var(--accent);font-weight:900}.benefit h3{font-size:18px;letter-spacing:-.03em}.benefit p{font-size:13px;color:var(--muted)}
+.contact{background:var(--ink);color:white;border-radius:34px;padding:55px;display:grid;grid-template-columns:1fr 1fr;gap:50px}.contact h2{font-size:clamp(40px,5vw,64px);line-height:.98;letter-spacing:-.06em;margin:10px 0}.contact p{color:#cbd5e1}.contact-list{display:grid;gap:16px;align-content:center}.contact-row{padding:18px 0;border-bottom:1px solid rgba(255,255,255,.13)}.contact-row small{display:block;color:#94a3b8;text-transform:uppercase;letter-spacing:.12em;font-weight:800}.contact-row a,.contact-row span{font-size:18px;font-weight:750}.footer{padding:35px 0 55px;color:#94a3b8;font-size:12px;display:flex;justify-content:space-between;gap:20px}
+.modal{position:fixed;inset:0;background:rgba(2,6,23,.7);backdrop-filter:blur(8px);z-index:50;display:none;align-items:center;justify-content:center;padding:20px}.modal.show{display:flex}.modal-card{background:#fff;border-radius:26px;max-width:920px;width:100%;max-height:90vh;overflow:auto;position:relative}.modal-card img{width:100%;max-height:420px;object-fit:cover;background:#0b1220}.modal-body{padding:28px}.close{position:absolute;right:16px;top:16px;border:0;border-radius:50%;width:40px;height:40px;background:rgba(255,255,255,.9);cursor:pointer;font-size:22px}.toast{position:fixed;right:20px;bottom:20px;background:var(--ink);color:#fff;padding:13px 17px;border-radius:999px;font-size:13px;display:none;z-index:60}.top{position:fixed;right:20px;bottom:20px;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:#fff;z-index:15;cursor:pointer;display:none}.reveal{opacity:0;transform:translateY(22px);transition:.7s}.reveal.in{opacity:1;transform:none}
+@media(max-width:900px){.links{display:none}.menu{display:block}.hero-grid,.about,.objective,.contact{grid-template-columns:1fr}.hero-card{order:-1}.stats{grid-template-columns:repeat(2,1fr)}.values,.clients,.benefits{grid-template-columns:repeat(2,1fr)}.services,.projects,.past-grid{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:18px}.contact{padding:35px}.hero{padding-top:105px}}
+@media(max-width:560px){.container{width:min(100% - 28px,1180px)}section{padding:75px 0}.hero h1{font-size:50px}.stats,.values,.clients,.benefits{grid-template-columns:1fr}.hero-card{aspect-ratio:1.25}.footer{display:block}.footer div+div{margin-top:8px}}
 
-  <style>
-    :root {
-      --blue: #0756a6;
-      --blue-2: #138bd2;
-      --cyan: #12b7d8;
-      --orange: #f28a00;
-      --ink: #17324d;
-      --muted: #61748a;
-      --line: #dfeaf3;
-      --soft: #f5faff;
-      --white: #ffffff;
-      --shadow: 0 20px 60px rgba(26, 81, 126, .10);
-      --radius: 22px;
-    }
+/* --- Interactive motion layer --- */
+html{scroll-padding-top:80px}
+body{overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;background:radial-gradient(600px circle at var(--mx,50%) var(--my,20%),rgba(59,130,246,.07),transparent 42%);mix-blend-mode:multiply}
+.scroll-progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,#2563eb,#7c3aed,#06b6d4);z-index:1000;box-shadow:0 0 18px rgba(37,99,235,.55)}
+.cursor-dot{position:fixed;width:8px;height:8px;border-radius:50%;background:#2563eb;pointer-events:none;z-index:1001;transform:translate(-50%,-50%);transition:transform .08s linear;opacity:.7}
+.cursor-ring{position:fixed;width:34px;height:34px;border:1px solid rgba(37,99,235,.45);border-radius:50%;pointer-events:none;z-index:1000;transform:translate(-50%,-50%);transition:width .2s,height .2s,border-color .2s;opacity:.55}
+.cursor-ring.big{width:60px;height:60px;border-color:rgba(37,99,235,.75)}
+.nav{transition:box-shadow .3s,background .3s}.nav.scrolled{box-shadow:0 8px 35px rgba(15,23,42,.08);background:rgba(255,255,255,.92)}
+.hero h1 .word{display:inline-block;opacity:0;transform:translateY(35px) rotate(2deg);animation:wordIn .75s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes wordIn{to{opacity:1;transform:none}}
+.hero-card{transform-style:preserve-3d;transition:transform .12s ease-out,box-shadow .35s}
+.hero-card:before{content:"";position:absolute;inset:-2px;background:conic-gradient(from 180deg,#2563eb,#7c3aed,#06b6d4,#2563eb);z-index:-1;border-radius:34px;filter:blur(16px);opacity:.25;animation:spinGlow 8s linear infinite}
+@keyframes spinGlow{to{transform:rotate(360deg)}}
+.float{animation:float 5s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.stat{position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s}.stat:hover{transform:translateY(-5px);box-shadow:inset 0 -3px 0 #2563eb}.stat strong{display:inline-block}
+.counter{font-variant-numeric:tabular-nums}
+.section-head h2{overflow:hidden}.section-head h2 .line{display:block;opacity:0;transform:translateY(105%);transition:transform .8s cubic-bezier(.2,.8,.2,1),opacity .8s}.reveal.in .line{transform:none;opacity:1}
+.panel,.value,.benefit,.past-item,.client,.service{transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}.panel:hover,.value:hover,.benefit:hover,.past-item:hover,.client:hover{transform:translateY(-6px);box-shadow:0 18px 45px rgba(15,23,42,.09);border-color:#bfdbfe}
+.objective{position:relative;overflow:hidden}.objective:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;right:-100px;top:-100px;background:rgba(96,165,250,.13);filter:blur(5px);animation:orb 7s ease-in-out infinite}
+@keyframes orb{50%{transform:translate(-40px,55px) scale(1.15)}}
+.quad div{transition:transform .25s,background .25s}.quad div:hover{transform:translateY(-4px) scale(1.02);background:rgba(255,255,255,.09)}
+.service{transform-style:preserve-3d}.service button span{transition:transform .35s}.service.open button span{transform:rotate(180deg)}
+.project{transform-style:preserve-3d;will-change:transform}.project-media{position:relative}.project-media:after{content:"VIEW PROJECT ↗";position:absolute;right:14px;bottom:14px;background:rgba(255,255,255,.92);color:#0f172a;border-radius:999px;padding:6px 9px;font-size:9px;font-weight:900;letter-spacing:.08em;opacity:0;transform:translateY(8px);transition:.25s}.project:hover .project-media:after{opacity:1;transform:none}
+.client img{filter:grayscale(1);opacity:.65;transition:filter .3s,opacity .3s,transform .3s}.client:hover img{filter:grayscale(0);opacity:1;transform:scale(1.06)}
+.marquee{overflow:hidden;white-space:nowrap;margin-top:35px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 0;color:#94a3b8;font-size:11px;font-weight:850;letter-spacing:.15em}.marquee-track{display:inline-block;animation:marquee 28s linear infinite}.marquee span{margin:0 25px}@keyframes marquee{to{transform:translateX(-50%)}}
+.benefit{position:relative;overflow:hidden}.benefit:before{content:"";position:absolute;left:-30%;top:-30%;width:80px;height:180%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.8),transparent);transform:rotate(18deg);transition:1s}.benefit:hover:before{left:120%}
+.contact{position:relative;overflow:hidden}.contact:before,.contact:after{content:"";position:absolute;border:1px solid rgba(147,197,253,.15);border-radius:50%;animation:pulseRing 5s ease-in-out infinite}.contact:before{width:380px;height:380px;right:-180px;top:-180px}.contact:after{width:240px;height:240px;left:-130px;bottom:-150px;animation-delay:1s}@keyframes pulseRing{50%{transform:scale(1.12);opacity:.5}}
+.toast{animation:toastIn .3s ease}.modal-card{animation:modalIn .35s cubic-bezier(.2,.8,.2,1)}@keyframes modalIn{from{opacity:0;transform:translateY(20px) scale(.97)}to{opacity:1;transform:none}}
+@media(max-width:900px){body:before,.cursor-dot,.cursor-ring{display:none}.hero h1 .word{animation-delay:0s}.links{flex-direction:column;position:absolute;top:72px;left:15px;right:15px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px 18px;box-shadow:var(--shadow)}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.001ms!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: Inter, Arial, sans-serif;
-      color: var(--ink);
-      background: #fff;
-      line-height: 1.65;
-      overflow-x: hidden;
-    }
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-
-    .container {
-      width: min(1180px, calc(100% - 44px));
-      margin: 0 auto;
-    }
-
-    /* NAV */
-    .nav-wrap {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 50;
-      padding: 16px 0;
-      transition: .25s ease;
-    }
-    .nav-wrap.scrolled {
-      background: rgba(255,255,255,.94);
-      backdrop-filter: blur(16px);
-      box-shadow: 0 8px 30px rgba(22,75,115,.07);
-    }
-    nav {
-      height: 72px;
-      padding: 0 18px;
-      background: rgba(255,255,255,.82);
-      border: 1px solid rgba(211,229,241,.85);
-      border-radius: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: 0 8px 30px rgba(20,83,125,.06);
-      backdrop-filter: blur(14px);
-    }
-    .brand img { width: 265px; height: auto; }
-    .links {
-      display: flex;
-      align-items: center;
-      gap: 27px;
-      font-size: 13px;
-      font-weight: 600;
-      color: #42617b;
-    }
-    .links a:hover { color: var(--blue); }
-    .nav-cta {
-      background: var(--blue);
-      color: #fff !important;
-      padding: 12px 18px;
-      border-radius: 11px;
-      box-shadow: 0 8px 20px rgba(7,86,166,.18);
-    }
-    .menu {
-      display: none;
-      border: 0;
-      background: transparent;
-      font-size: 27px;
-      color: var(--blue);
-      cursor: pointer;
-    }
-
-    /* HERO */
-    .hero {
-      position: relative;
-      min-height: 760px;
-      padding: 170px 0 100px;
-      background:
-        radial-gradient(circle at 80% 20%, rgba(18,183,216,.13), transparent 28%),
-        radial-gradient(circle at 8% 75%, rgba(7,86,166,.08), transparent 30%),
-        linear-gradient(180deg, #f8fcff 0%, #fff 82%);
-    }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.02fr .98fr;
-      align-items: center;
-      gap: 70px;
-    }
-    .eyebrow {
-      display: inline-flex;
-      gap: 9px;
-      align-items: center;
-      color: var(--blue);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 2.2px;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
-    .eyebrow::before {
-      content: "";
-      width: 28px;
-      height: 3px;
-      border-radius: 4px;
-      background: linear-gradient(90deg,var(--orange),var(--cyan));
-    }
-    h1 {
-      font-family: Manrope, Inter, sans-serif;
-      font-size: clamp(48px, 6.2vw, 78px);
-      line-height: 1.02;
-      letter-spacing: -3.2px;
-      color: #123554;
-      max-width: 690px;
-    }
-    h1 .accent {
-      background: linear-gradient(90deg, var(--blue), var(--blue-2), var(--cyan));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    .hero-copy {
-      margin-top: 25px;
-      max-width: 610px;
-      font-size: 18px;
-      color: var(--muted);
-    }
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 13px;
-      margin-top: 34px;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 14px 21px;
-      border-radius: 12px;
-      font-size: 14px;
-      font-weight: 700;
-      transition: .22s ease;
-    }
-    .btn-primary {
-      color: #fff;
-      background: linear-gradient(135deg, var(--blue), var(--blue-2));
-      box-shadow: 0 12px 26px rgba(7,86,166,.20);
-    }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 16px 32px rgba(7,86,166,.25); }
-    .btn-secondary {
-      color: var(--blue);
-      background: #fff;
-      border: 1px solid #cfe0ed;
-    }
-    .btn-secondary:hover { border-color: var(--blue-2); background: #f5fbff; }
-
-    /* BIM VISUAL */
-    .visual {
-      position: relative;
-      min-height: 500px;
-    }
-    .visual-card {
-      position: absolute;
-      border: 1px solid rgba(170,204,225,.75);
-      background: rgba(255,255,255,.78);
-      backdrop-filter: blur(15px);
-      border-radius: 24px;
-      box-shadow: var(--shadow);
-    }
-    .model {
-      inset: 28px 10px 45px 20px;
-      padding: 20px;
-      overflow: hidden;
-      background:
-        linear-gradient(rgba(18,139,210,.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(18,139,210,.06) 1px, transparent 1px),
-        #f7fcff;
-      background-size: 30px 30px;
-    }
-    .model::before {
-      content: "";
-      position: absolute;
-      width: 290px;
-      height: 210px;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%,-50%) perspective(500px) rotateX(58deg) rotateZ(-36deg);
-      background:
-        linear-gradient(90deg, rgba(7,86,166,.78) 1px, transparent 1px),
-        linear-gradient(rgba(7,86,166,.78) 1px, transparent 1px);
-      background-size: 32px 32px;
-      border: 3px solid rgba(7,86,166,.8);
-      box-shadow: 50px -42px 0 -2px rgba(18,183,216,.15);
-    }
-    .model::after {
-      content: "BIM MODEL";
-      position: absolute;
-      top: 19px;
-      left: 21px;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 1.8px;
-      color: var(--blue);
-    }
-    .data-card {
-      width: 245px;
-      right: -4px;
-      bottom: 8px;
-      padding: 18px;
-    }
-    .data-card .mini-title {
-      font-size: 10px;
-      color: #7a91a5;
-      font-weight: 800;
-      letter-spacing: 1.4px;
-      text-transform: uppercase;
-    }
-    .cost {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      margin-top: 6px;
-    }
-    .cost strong { font-size: 28px; color: var(--blue); }
-    .cost span { font-size: 11px; color: #1c9c74; font-weight: 700; }
-    .bar {
-      height: 7px;
-      background: #e9f2f7;
-      border-radius: 10px;
-      overflow: hidden;
-      margin-top: 12px;
-    }
-    .bar i {
-      display: block;
-      width: 73%;
-      height: 100%;
-      border-radius: 10px;
-      background: linear-gradient(90deg,var(--blue),var(--cyan));
-    }
-    .floating {
-      top: 0;
-      right: 20px;
-      padding: 14px 16px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: #385a73;
-      font-size: 12px;
-      font-weight: 700;
-    }
-    .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--orange);
-      box-shadow: 0 0 0 5px rgba(242,138,0,.12);
-    }
-
-    /* TRUST STRIP */
-    .trust {
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      background: #fff;
-    }
-    .trust-row {
-      min-height: 92px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 25px;
-      color: #71869a;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 1.1px;
-      text-transform: uppercase;
-    }
-
-    /* GENERAL */
-    section { padding: 105px 0; }
-    .section-kicker {
-      color: var(--blue);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 2.4px;
-      text-transform: uppercase;
-      margin-bottom: 14px;
-    }
-    .section-title {
-      font-family: Manrope, Inter, sans-serif;
-      font-size: clamp(36px, 4.4vw, 56px);
-      line-height: 1.08;
-      letter-spacing: -2px;
-      color: #143a59;
-    }
-    .section-lead {
-      color: var(--muted);
-      max-width: 680px;
-      margin-top: 18px;
-      font-size: 16px;
-    }
-
-    /* ABOUT */
-    .about {
-      background: #fff;
-    }
-    .about-grid {
-      display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap: 90px;
-      align-items: center;
-    }
-    .about-panel {
-      padding: 35px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background:
-        radial-gradient(circle at 90% 5%, rgba(18,183,216,.11), transparent 27%),
-        #f8fcff;
-    }
-    .about-panel h3 {
-      font-family: Manrope, sans-serif;
-      font-size: 28px;
-      line-height: 1.25;
-      color: #164b71;
-      margin-bottom: 18px;
-    }
-    .about-panel p { color: var(--muted); }
-    .check-list {
-      list-style: none;
-      display: grid;
-      gap: 13px;
-      margin-top: 23px;
-    }
-    .check-list li {
-      display: flex;
-      gap: 11px;
-      align-items: start;
-      color: #35536b;
-      font-size: 14px;
-      font-weight: 600;
-    }
-    .check-list li::before {
-      content: "✓";
-      color: var(--blue);
-      font-weight: 900;
-    }
-
-    /* SERVICES */
-    .services { background: var(--soft); }
-    .service-head {
-      display: flex;
-      justify-content: space-between;
-      gap: 50px;
-      align-items: end;
-      margin-bottom: 50px;
-    }
-    .service-head .section-lead { margin-top: 0; max-width: 480px; }
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 18px;
-    }
-    .service {
-      position: relative;
-      min-height: 255px;
-      padding: 29px;
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 19px;
-      transition: .22s ease;
-      overflow: hidden;
-    }
-    .service:hover {
-      transform: translateY(-5px);
-      border-color: #b8d8eb;
-      box-shadow: var(--shadow);
-    }
-    .service::after {
-      content: "";
-      position: absolute;
-      width: 100px;
-      height: 100px;
-      right: -40px;
-      bottom: -45px;
-      border-radius: 50%;
-      background: rgba(18,183,216,.07);
-    }
-    .service-num {
-      color: #a0b5c6;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 1.5px;
-    }
-    .service h3 {
-      font-family: Manrope, sans-serif;
-      font-size: 21px;
-      margin: 37px 0 11px;
-      color: #174665;
-    }
-    .service p { color: var(--muted); font-size: 14px; }
-
-    /* BIM + QS */
-    .integration {
-      background: #fff;
-    }
-    .integration-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 75px;
-      align-items: center;
-    }
-    .flow {
-      display: grid;
-      grid-template-columns: repeat(2,1fr);
-      gap: 13px;
-      margin-top: 30px;
-    }
-    .flow-item {
-      padding: 20px;
-      border: 1px solid var(--line);
-      border-radius: 15px;
-      background: #fbfdff;
-    }
-    .flow-item strong { display: block; color: #17517a; font-size: 14px; margin-bottom: 4px; }
-    .flow-item span { color: #7b8fa1; font-size: 12px; }
-    .integration-visual {
-      min-height: 450px;
-      border-radius: 26px;
-      padding: 25px;
-      background:
-        radial-gradient(circle at 30% 30%, rgba(18,183,216,.22), transparent 25%),
-        linear-gradient(145deg,#edf8ff,#fff);
-      border: 1px solid var(--line);
-      position: relative;
-      overflow: hidden;
-    }
-    .integration-visual .ring {
-      position: absolute;
-      width: 340px;
-      height: 340px;
-      border: 1px solid rgba(7,86,166,.16);
-      border-radius: 50%;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%,-50%);
-    }
-    .integration-visual .ring.r2 {
-      width: 250px; height: 250px;
-      border-color: rgba(18,183,216,.22);
-    }
-    .hub {
-      position: absolute;
-      width: 145px;
-      height: 145px;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%,-50%);
-      border-radius: 26px;
-      background: linear-gradient(145deg,var(--blue),var(--cyan));
-      color: #fff;
-      display: grid;
-      place-items: center;
-      text-align: center;
-      font-family: Manrope, sans-serif;
-      font-size: 20px;
-      font-weight: 800;
-      box-shadow: 0 20px 45px rgba(7,86,166,.25);
-    }
-    .node {
-      position: absolute;
-      padding: 11px 14px;
-      background: #fff;
-      border: 1px solid #cfe3ef;
-      border-radius: 12px;
-      color: #31536d;
-      font-size: 11px;
-      font-weight: 800;
-      box-shadow: 0 10px 30px rgba(31,86,124,.08);
-    }
-    .n1 { top: 55px; left: 34px; }
-    .n2 { top: 70px; right: 28px; }
-    .n3 { bottom: 70px; left: 35px; }
-    .n4 { bottom: 50px; right: 34px; }
-    .n5 { top: 50%; left: 12px; transform: translateY(-50%); }
-
-    /* PROJECTS */
-    .projects { background: #f8fbfd; }
-    .project-grid {
-      display: grid;
-      grid-template-columns: 1.25fr .75fr .75fr;
-      gap: 17px;
-      margin-top: 48px;
-    }
-    .project {
-      min-height: 330px;
-      border-radius: 20px;
-      overflow: hidden;
-      position: relative;
-      border: 1px solid var(--line);
-      background:
-        linear-gradient(135deg,rgba(7,86,166,.85),rgba(18,183,216,.45)),
-        repeating-linear-gradient(0deg,transparent 0 28px,rgba(255,255,255,.10) 29px 30px);
-    }
-    .project:nth-child(2) {
-      background:
-        linear-gradient(135deg,rgba(242,138,0,.82),rgba(18,183,216,.55)),
-        repeating-linear-gradient(90deg,transparent 0 28px,rgba(255,255,255,.12) 29px 30px);
-    }
-    .project:nth-child(3) {
-      background:
-        linear-gradient(135deg,rgba(22,75,113,.85),rgba(7,86,166,.48)),
-        repeating-linear-gradient(45deg,transparent 0 25px,rgba(255,255,255,.10) 26px 27px);
-    }
-    .project::before {
-      content: "PROJECT IMAGE";
-      position: absolute;
-      inset: 0;
-      display: grid;
-      place-items: center;
-      color: rgba(255,255,255,.38);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 2px;
-    }
-    .project-info {
-      position: absolute;
-      z-index: 2;
-      left: 0; right: 0; bottom: 0;
-      padding: 25px;
-      color: #fff;
-      background: linear-gradient(transparent,rgba(9,40,63,.88));
-    }
-    .project-info span { font-size: 10px; letter-spacing: 1.3px; font-weight: 800; opacity: .8; }
-    .project-info h3 { font-family: Manrope,sans-serif; font-size: 20px; margin-top: 5px; }
-
-    /* STATS */
-    .stats {
-      padding: 75px 0;
-      background: #fff;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(4,1fr);
-      gap: 30px;
-    }
-    .stat { padding-right: 25px; border-right: 1px solid var(--line); }
-    .stat:last-child { border-right: 0; }
-    .stat strong {
-      display: block;
-      font-family: Manrope,sans-serif;
-      font-size: 42px;
-      color: var(--blue);
-      letter-spacing: -1.5px;
-    }
-    .stat span { color: #71879a; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
-
-    /* CTA */
-    .cta {
-      padding: 105px 0;
-      background:
-        radial-gradient(circle at 80% 20%,rgba(18,183,216,.18),transparent 27%),
-        linear-gradient(135deg,#edf8ff,#f8fcff);
-    }
-    .cta-box {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 40px;
-      padding: 50px;
-      border: 1px solid #cfe4f0;
-      border-radius: 27px;
-      background: rgba(255,255,255,.78);
-      box-shadow: var(--shadow);
-    }
-    .cta-box h2 {
-      font-family: Manrope,sans-serif;
-      font-size: clamp(34px,4vw,50px);
-      line-height: 1.08;
-      letter-spacing: -1.8px;
-      color: #143a59;
-    }
-    .cta-box p { margin-top: 12px; color: var(--muted); }
-
-    /* FOOTER */
-    footer {
-      padding: 55px 0 28px;
-      background: #f6fafc;
-      border-top: 1px solid var(--line);
-    }
-    .footer-top {
-      display: grid;
-      grid-template-columns: 1.2fr .8fr .8fr;
-      gap: 60px;
-      padding-bottom: 42px;
-    }
-    .footer-logo { width: 270px; }
-    .footer-copy { margin-top: 15px; color: #70869a; font-size: 13px; max-width: 370px; }
-    footer h4 { font-size: 12px; letter-spacing: 1.3px; text-transform: uppercase; color: #46657c; margin-bottom: 15px; }
-    footer a, footer p { color: #70869a; font-size: 13px; }
-    .footer-links { display: grid; gap: 8px; }
-    .copyright {
-      padding-top: 22px;
-      border-top: 1px solid var(--line);
-      color: #8aa0b2;
-      font-size: 11px;
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    @media (max-width: 900px) {
-      .links { display: none; }
-      .menu { display: block; }
-      .hero-grid, .about-grid, .integration-grid { grid-template-columns: 1fr; }
-      .hero { padding-top: 140px; }
-      .visual { min-height: 470px; }
-      .service-grid { grid-template-columns: repeat(2,1fr); }
-      .project-grid { grid-template-columns: 1fr 1fr; }
-      .project:first-child { grid-column: 1 / -1; }
-      .stats-grid { grid-template-columns: repeat(2,1fr); }
-      .stat:nth-child(2) { border-right: 0; }
-      .stat { border-bottom: 1px solid var(--line); padding-bottom: 20px; }
-      .footer-top { grid-template-columns: 1fr 1fr; }
-      .footer-top > div:first-child { grid-column: 1 / -1; }
-      .cta-box { align-items: start; flex-direction: column; }
-    }
-
-    @media (max-width: 620px) {
-      .container { width: min(100% - 28px,1180px); }
-      nav { height: 64px; }
-      .brand img { width: 205px; }
-      h1 { letter-spacing: -2px; }
-      section { padding: 78px 0; }
-      .hero { min-height: auto; padding-bottom: 75px; }
-      .hero-copy { font-size: 16px; }
-      .visual { min-height: 390px; }
-      .model { inset: 20px 0 30px 0; }
-      .data-card { right: 0; }
-      .floating { right: 0; }
-      .trust-row { flex-wrap: wrap; justify-content: center; padding: 24px 0; text-align: center; }
-      .service-grid, .project-grid, .stats-grid, .flow { grid-template-columns: 1fr; }
-      .project:first-child { grid-column: auto; }
-      .stat { border-right: 0; }
-      .cta-box { padding: 30px; }
-      .footer-top { grid-template-columns: 1fr; }
-      .footer-top > div:first-child { grid-column: auto; }
-      .copyright { flex-direction: column; }
-    }
-  </style>
+</style>
 </head>
-
 <body>
+<div class="scroll-progress"></div><div class="cursor-dot"></div><div class="cursor-ring"></div>
+<nav class="nav"><div class="container navin">
+<a class="brand" href="#top">We<span>BIM</span> Consultancy</a>
+<div class="links">
+<a href="#about">About</a><a href="#why">Why Us</a><a href="#services">Services</a><a href="#clients">Clients</a><a href="#projects">Projects</a><a href="#benefits">BIM QTO</a><a href="#contact">Contact</a>
+</div><button class="menu" onclick="document.querySelector('.links').style.display=document.querySelector('.links').style.display==='flex'?'none':'flex'">☰</button>
+</div></nav>
 
-  <div class="nav-wrap" id="navbar">
-    <div class="container">
-      <nav>
-        <a href="#home" class="brand" aria-label="WeBIM Consultancy home">
-          <img src="logo.png" alt="WeBIM Consultancy Pte. Ltd. — Sharpen Your Cost">
-        </a>
+<main id="top">
+<section class="hero"><div class="container hero-grid">
+<div>
+<div class="eyebrow">BIM-Integrated QS Services</div>
+<h1><span class="word" style="animation-delay:.05s">From</span> <em class="word" style="animation-delay:.15s">BIM</em> <span class="word" style="animation-delay:.25s">to</span> <span class="word" style="animation-delay:.35s">better</span> <span class="word" style="animation-delay:.45s">quantity</span> <span class="word" style="animation-delay:.55s">decisions.</span></h1>
+<p class="lead">WeBIM Consultancy Pte Ltd delivers tailored, high-quality quantity take-off solutions by integrating BIM capability with quantity surveying expertise.</p>
+<div class="cta"><a class="btn primary" href="#services">Explore our services ↓</a><a class="btn" href="#projects">View project experience</a></div>
+</div>
+<div class="hero-card"><img src="assets/slide13_7.jpg" alt="BIM project model"><div class="overlay"></div><div class="hero-note"><b>Innovation · Profit · Success</b><small>Enhancing tender success and assisting clients in timely and effective cost control.</small></div></div>
+</div></section>
 
-        <div class="links">
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#bim">BIM + QS</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact" class="nav-cta">Contact Us</a>
-        </div>
+<section style="padding-top:30px"><div class="container"><div class="stats reveal">
+<div class="stat"><strong class="counter" data-target="2020">0</strong><span>Established</span></div><div class="stat"><strong class="counter" data-target="3">0</strong><span>Core QS stages</span></div><div class="stat"><strong class="counter" data-target="20" data-suffix="+">0</strong><span>Featured references</span></div><div class="stat"><strong>BIM</strong><span>Integrated workflow</span></div>
+</div></div></section>
+<div class="marquee"><div class="marquee-track">
+<span>BIM-INTEGRATED QS</span><span>QUANTITY TAKE-OFF</span><span>TENDER PREPARATION</span><span>COST CONTROL</span><span>PROGRESS CLAIMS</span><span>VARIATION ORDERS</span><span>FINAL ACCOUNT</span>
+<span>BIM-INTEGRATED QS</span><span>QUANTITY TAKE-OFF</span><span>TENDER PREPARATION</span><span>COST CONTROL</span><span>PROGRESS CLAIMS</span><span>VARIATION ORDERS</span><span>FINAL ACCOUNT</span>
+</div></div>
 
-        <button class="menu" id="menuBtn" aria-label="Open navigation">☰</button>
-      </nav>
-    </div>
-  </div>
+<section id="about"><div class="container">
+<div class="section-head reveal"><div><div class="kicker">01 · About Us</div><h2>Built around QS.<br>Powered by BIM.</h2></div><p>Our mission and core business are centred on delivering tailored, high-quality quantity take-off solutions to meet client needs.</p></div>
+<div class="about reveal">
+<div class="panel"><h3>Company Introduction</h3><div class="facts">
+<div class="fact"><b>Established</b><span>2020</span></div>
+<div class="fact"><b>Mission</b><span>Deliver tailored, high-quality quantity take-off solutions to meet client needs.</span></div>
+<div class="fact"><b>Core Business</b><span>Quantity surveying (QS) services for developers, QS consultant, main contractors and subcontractors.</span></div>
+<div class="fact"><b>Team Expertise</b><span>BIM-trained professionals with QS backgrounds, integrating BIM and QS knowledge to improve efficiency and maximize client value.</span></div>
+</div></div>
+<div class="panel"><h3>Service Scope</h3><div class="facts">
+<div class="fact"><b>Standard QS</b><span>Tender preparation, monthly progress claims, variation orders (VO), and final account settlements.</span></div>
+<div class="fact"><b>QS Consulting</b><span>Pre-tender cost estimation, tendering support, project contract management, cost control & final account.</span></div>
+<div class="fact"><b>Objective</b><span>Effective cost and quantity support that helps clients improve tender outcomes and maintain timely cost control.</span></div>
+</div></div>
+</div>
+<div class="objective reveal"><div><div class="kicker" style="color:#93c5fd">Our Objective</div><h3>Effective<br>quantity decisions.</h3></div><div class="quad"><div><b>Innovation</b><span>Use BIM-enabled workflows.</span></div><div><b>Profit</b><span>Support value and cost outcomes.</span></div><div><b>Success</b><span>Enhance tender success.</span></div><div><b>Control</b><span>Assist timely, effective cost control.</span></div></div></div>
+</div></section>
 
-  <main>
+<section id="why"><div class="container">
+<div class="section-head reveal"><div><div class="kicker">02 · Why Us</div><h2>Trust is built<br>into the process.</h2></div><p>Expertise, proficiency and integration are combined with tailored solutions, a proven track record, commitment, collaboration and a future-focused mindset.</p></div>
+<div class="trust reveal">Trust = Credibility × Reliability × Intimacy ÷ Self-orientation</div>
+<div class="values reveal" style="margin-top:20px">
+<div class="value"><b>Expertise</b><p>QS knowledge supported by BIM-trained professionals.</p></div>
+<div class="value"><b>Proficiency</b><p>Practical delivery across quantity take-off and QS workflows.</p></div>
+<div class="value"><b>Integration</b><p>Connect BIM information with quantity surveying decisions.</p></div>
+<div class="value"><b>Tailored Solution</b><p>Solutions shaped around client needs.</p></div>
+<div class="value"><b>Track Record</b><p>Experience across major developments and infrastructure-related projects.</p></div>
+<div class="value"><b>Commitment</b><p>Focused on reliable delivery and client outcomes.</p></div>
+<div class="value"><b>Collaboration</b><p>Designed to work with project stakeholders.</p></div>
+<div class="value"><b>Future-Focused</b><p>Ready for BIM-led quantity and cost workflows.</p></div>
+</div></div></section>
 
-    <section class="hero" id="home">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">BIM · Quantity Surveying · Consultancy</div>
-          <h1>Sharper <span class="accent">cost.</span><br>Smarter <span class="accent">construction.</span></h1>
-          <p class="hero-copy">
-            WeBIM Consultancy combines Building Information Modelling,
-            quantity surveying and commercial expertise to bring clearer
-            information and stronger cost control to every project.
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#contact">Start a Conversation →</a>
-            <a class="btn btn-secondary" href="#services">Explore Our Services</a>
-          </div>
-        </div>
+<section id="services"><div class="container">
+<div class="section-head reveal"><div><div class="kicker">03 · BIM Integrated Core Services</div><h2>QS support across<br>the project lifecycle.</h2></div><p>Use the panels below to explore the services presented in the proposal.</p></div>
+<div class="services reveal">
+<div class="service open"><button onclick="toggleService(this)"><b>Tender Stage</b><span>−</span></button><div class="service-body"><ul><li>3D Model Creation with Cubicost QTO Software</li><li>Preparation of BQ (Bill of Quantities) based on TBQ software or in Excel format</li></ul></div></div>
+<div class="service"><button onclick="toggleService(this)"><b>BIM-Integrated Quantity Estimation</b><span>+</span></button><div class="service-body"><ul><li>3D Model Creation with Cubicost QTO Software</li><li>Presentable Reports: Excel or Cubicost Report</li></ul></div></div>
+<div class="service"><button onclick="toggleService(this)"><b>Fluctuation Material Remeasurement</b><span>+</span></button><div class="service-body"><ul><li>Fluctuation material remeasurement</li><li>Presentable Reports: Excel or Cubicost Report</li></ul></div></div>
+<div class="service"><button onclick="toggleService(this)"><b>Progress Claim Management</b><span>+</span></button><div class="service-body"><ul><li>Manage Claims Using BIM to Expedite the Claim Process</li></ul></div></div>
+<div class="service"><button onclick="toggleService(this)"><b>Variation Order & Final Account</b><span>+</span></button><div class="service-body"><ul><li>VO Assessment Preparation</li><li>Final Account Quantity Take-off</li><li>Final Account BQ Preparation</li><li>Final Account Cost Analysis</li></ul></div></div>
+</div></div></section>
 
-        <div class="visual" aria-label="BIM and cost management visual">
-          <div class="visual-card model"></div>
+<section id="clients"><div class="container">
+<div class="section-head reveal"><div><div class="kicker">04 · Our Clients</div><h2>Trusted by<br>project teams.</h2></div><p>Client identities shown here are reproduced from the proposal.</p></div>
+<div class="clients reveal">
+<div class="client"><img src="assets/slide11_15.png" alt="Hexacon Construction"></div>
+<div class="client"><img src="assets/slide11_17.png" alt="Beijing Urban Construction Group"></div>
+<div class="client"><img src="assets/slide11_20.png" alt="Client logo"></div>
+<div class="client"><img src="assets/slide11_21.png" alt="Client logo"></div>
+<div class="client"><img src="assets/slide11_22.png" alt="Keong Hong Holdings Limited"></div>
+</div></div></section>
 
-          <div class="visual-card floating">
-            <span class="dot"></span>
-            BIM + 5D Cost Integration
-          </div>
+<section id="projects"><div class="container">
+<div class="section-head reveal"><div><div class="kicker">05 · Our Major Projects</div><h2>Experience you<br>can explore.</h2></div><p>Filter by project period, then open any project for a larger view and full proposal description.</p></div>
+<div class="filters reveal"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="2025">2025</button><button class="filter" data-filter="2024">2024</button><button class="filter" data-filter="Past">Major Past</button></div>
+<div class="projects reveal" id="projectGrid">
+<article class="project" data-year="2025" onclick='openProject({"year": "2025", "title": "Terminal T5A", "metric": "CFA", "value": "1,200,000 m²", "desc": "Terminal T5A"})'>
+<div class="project-media"><div style="height:100%;display:grid;place-items:center;color:#93c5fd;font-weight:800;letter-spacing:.08em">BIM MODEL</div></div>
+<div class="project-content"><span class="tag">2025</span><h3>Terminal T5A</h3><div class="metric">1,200,000 m² <small>CFA</small></div><p>Terminal T5A</p></div>
+</article><article class="project" data-year="2025" onclick='openProject({"year": "2025", "title": "Redeveloped Alexandra Hospital", "metric": "CFA", "value": "447,306 m²", "desc": "Redeveloped Alexandra Hospital Singapore Tower A (Outpatient Tower) & B (Inpatient Tower) Including The Link Bridges And External Works – In Patient Tower", "img": "slide14_4.png"})'>
+<div class="project-media"><img src="assets/slide14_4.png" alt=""></div>
+<div class="project-content"><span class="tag">2025</span><h3>Redeveloped Alexandra Hospital</h3><div class="metric">447,306 m² <small>CFA</small></div><p>Redeveloped Alexandra Hospital Singapore Tower A (Outpatient Tower) &amp; B (Inpatient Tower) Including The Link Bridges And External Works – In Patient Tower</p></div>
+</article><article class="project" data-year="2025" onclick='openProject({"year": "2025", "title": "Wuxi Biologics Manufacturing — Admin Building & Car Park", "metric": "CFA", "value": "25,304 m²", "desc": "Proposed erection of a single-user biologics manufacturing facility comprising a 4-storey administration building, a 4-storey car park building, a 3-storey central utility building and standalone ancillary structures including waste water treatment building, hazardous storage building and waste storage building at Tuas South Ave / Tuas View Drive.", "img": "slide15_8.png"})'>
+<div class="project-media"><img src="assets/slide15_8.png" alt=""></div>
+<div class="project-content"><span class="tag">2025</span><h3>Wuxi Biologics Manufacturing — Admin Building &amp; Car Park</h3><div class="metric">25,304 m² <small>CFA</small></div><p>Proposed erection of a single-user biologics manufacturing facility comprising a 4-storey administration building, a 4-storey car park building, a 3-storey central utility building and standalone ancillary structures including waste water treatment building, hazardous storage building and waste storage building at Tuas South Ave / Tuas View Drive.</p></div>
+</article><article class="project" data-year="2025" onclick='openProject({"year": "2025", "title": "Nursing Home Tender — Dover Road", "metric": "CFA", "value": "14,330 m²", "desc": "Proposed erection of a block of 9 storey nursing home development on Lot 03238X Pt MK03 at Dover Road, Singapore.", "img": "slide16_5.png"})'>
+<div class="project-media"><img src="assets/slide16_5.png" alt=""></div>
+<div class="project-content"><span class="tag">2025</span><h3>Nursing Home Tender — Dover Road</h3><div class="metric">14,330 m² <small>CFA</small></div><p>Proposed erection of a block of 9 storey nursing home development on Lot 03238X Pt MK03 at Dover Road, Singapore.</p></div>
+</article><article class="project" data-year="2025" onclick='openProject({"year": "2025", "title": "Nursing Home Tender — Bukit Purmei Avenue", "metric": "CFA", "value": "11,516 m²", "desc": "Proposed erection of 1 block of 8-storey nursing home development on Lots 02440W Pt, 02849L Pt & 04204W Pt at Bukit Purmei Avenue.", "img": "slide17_5.png"})'>
+<div class="project-media"><img src="assets/slide17_5.png" alt=""></div>
+<div class="project-content"><span class="tag">2025</span><h3>Nursing Home Tender — Bukit Purmei Avenue</h3><div class="metric">11,516 m² <small>CFA</small></div><p>Proposed erection of 1 block of 8-storey nursing home development on Lots 02440W Pt, 02849L Pt &amp; 04204W Pt at Bukit Purmei Avenue.</p></div>
+</article><article class="project" data-year="2025" onclick='openProject({"year": "2025", "title": "Nursing Home — Alexandra Road / Queenstown", "metric": "CFA", "value": "22,452 m²", "desc": "Proposed development of a 14-storey nursing home with 1 basement storey on Lot 00389P Pt MK03 and Lot 05770L Pt MK03 at Alexandra Road (Queenstown Planning Area).", "img": "slide18_5.png"})'>
+<div class="project-media"><img src="assets/slide18_5.png" alt=""></div>
+<div class="project-content"><span class="tag">2025</span><h3>Nursing Home — Alexandra Road / Queenstown</h3><div class="metric">22,452 m² <small>CFA</small></div><p>Proposed development of a 14-storey nursing home with 1 basement storey on Lot 00389P Pt MK03 and Lot 05770L Pt MK03 at Alexandra Road (Queenstown Planning Area).</p></div>
+</article><article class="project" data-year="2025" onclick='openProject({"year": "2025", "title": "Golden Mile Complex Redevelopment", "metric": "CFA", "value": "79,091 m²", "desc": "Proposed additions & alterations to existing 17-storey conservation building on Lot 00359T (PT) and SL Lot 00435A (PT) TS 15 at Beach Road / Nicoll Highway (Downtown Core Planning Area).", "img": "slide19_4.png"})'>
+<div class="project-media"><img src="assets/slide19_4.png" alt=""></div>
+<div class="project-content"><span class="tag">2025</span><h3>Golden Mile Complex Redevelopment</h3><div class="metric">79,091 m² <small>CFA</small></div><p>Proposed additions &amp; alterations to existing 17-storey conservation building on Lot 00359T (PT) and SL Lot 00435A (PT) TS 15 at Beach Road / Nicoll Highway (Downtown Core Planning Area).</p></div>
+</article><article class="project" data-year="2024" onclick='openProject({"year": "2024", "title": "Resort World Sentosa Parcel 1", "metric": "CFA", "value": "242,654 m²", "desc": "Existing basement zone, transport system and additions & alterations to boardwalk, implementation of a driverless system, additions & alterations to existing podium, new waterfront attraction hotel (700 rooms), and 4-storey retail and entertainment.", "img": "slide20_6.png"})'>
+<div class="project-media"><img src="assets/slide20_6.png" alt=""></div>
+<div class="project-content"><span class="tag">2024</span><h3>Resort World Sentosa Parcel 1</h3><div class="metric">242,654 m² <small>CFA</small></div><p>Existing basement zone, transport system and additions &amp; alterations to boardwalk, implementation of a driverless system, additions &amp; alterations to existing podium, new waterfront attraction hotel (700 rooms), and 4-storey retail and entertainment.</p></div>
+</article><article class="project" data-year="2024" onclick='openProject({"year": "2024", "title": "Singtel Comcenter", "metric": "GFA", "value": "142,261 m²", "desc": "Proposed redevelopment of existing Comcentre comprising erection of 2 blocks of 20-storey office towers on 5-storey podium with 3 basements and retention / additions / alterations.", "img": "slide21_6.png"})'>
+<div class="project-media"><img src="assets/slide21_6.png" alt=""></div>
+<div class="project-content"><span class="tag">2024</span><h3>Singtel Comcenter</h3><div class="metric">142,261 m² <small>GFA</small></div><p>Proposed redevelopment of existing Comcentre comprising erection of 2 blocks of 20-storey office towers on 5-storey podium with 3 basements and retention / additions / alterations.</p></div>
+</article><article class="project" data-year="2024" onclick='openProject({"year": "2024", "title": "CR101", "metric": "GFA", "value": "662,365 m²", "desc": "Contract CR101 — proposed erection of Changi East Rail Depot comprising main workshop, permanent way workshop, stabling facilities, administration building, load centres and other ancillary buildings for Cross Island Line at Aviation Park Road.", "img": "slide22_6.png"})'>
+<div class="project-media"><img src="assets/slide22_6.png" alt=""></div>
+<div class="project-content"><span class="tag">2024</span><h3>CR101</h3><div class="metric">662,365 m² <small>GFA</small></div><p>Contract CR101 — proposed erection of Changi East Rail Depot comprising main workshop, permanent way workshop, stabling facilities, administration building, load centres and other ancillary buildings for Cross Island Line at Aviation Park Road.</p></div>
+</article><article class="project" data-year="2024" onclick='openProject({"year": "2024", "title": "PSA PORT + HUB @ TUAS Terminal", "metric": "GFA", "value": "235,998.5 m²", "desc": "Construction of Port+ Hub consisting of warehouse, gate buildings, main intake substation and ancillary buildings at Tuas Terminal.", "img": "slide23_6.png"})'>
+<div class="project-media"><img src="assets/slide23_6.png" alt=""></div>
+<div class="project-content"><span class="tag">2024</span><h3>PSA PORT + HUB @ TUAS Terminal</h3><div class="metric">235,998.5 m² <small>GFA</small></div><p>Construction of Port+ Hub consisting of warehouse, gate buildings, main intake substation and ancillary buildings at Tuas Terminal.</p></div>
+</article><article class="project" data-year="2024" onclick='openProject({"year": "2024", "title": "Multi-storey Bus Depot @ Simpang", "metric": "GFA", "value": "142,261 m²", "desc": "Multi-storey Bus Depot at Simpang.", "img": "slide24_5.png"})'>
+<div class="project-media"><img src="assets/slide24_5.png" alt=""></div>
+<div class="project-content"><span class="tag">2024</span><h3>Multi-storey Bus Depot @ Simpang</h3><div class="metric">142,261 m² <small>GFA</small></div><p>Multi-storey Bus Depot at Simpang.</p></div>
+</article><article class="project" data-year="Past" onclick='openProject({"year": "Past", "title": "National Science Center", "metric": "GFA", "value": "55,000 m²", "desc": "Proposed erection of a block of 5-storey new science center with 1 level basement carparks.", "img": "slide26_4.png"})'>
+<div class="project-media"><img src="assets/slide26_4.png" alt=""></div>
+<div class="project-content"><span class="tag">Past</span><h3>National Science Center</h3><div class="metric">55,000 m² <small>GFA</small></div><p>Proposed erection of a block of 5-storey new science center with 1 level basement carparks.</p></div>
+</article><article class="project" data-year="Past" onclick='openProject({"year": "Past", "title": "OBV Mixed Development at Orchard", "metric": "Site Area", "value": "12,127.2 m²", "desc": "Mixed development with hotel and residential units and 5-basement car parking. The residential development, Boulevard 88, comprises two 28-storey towers accommodating 154 luxurious apartments.", "img": "slide27_3.png"})'>
+<div class="project-media"><img src="assets/slide27_3.png" alt=""></div>
+<div class="project-content"><span class="tag">Past</span><h3>OBV Mixed Development at Orchard</h3><div class="metric">12,127.2 m² <small>Site Area</small></div><p>Mixed development with hotel and residential units and 5-basement car parking. The residential development, Boulevard 88, comprises two 28-storey towers accommodating 154 luxurious apartments.</p></div>
+</article><article class="project" data-year="Past" onclick='openProject({"year": "Past", "title": "8 Storey Ramp Up Light Industrial Development at 1 Kampong Ampat", "metric": "GFA", "value": "18,365.50 m²", "desc": "Proposed erection of a block of 8-storey multi-user ramp-up light industry development (total 97 units) with a temporary industrial canteen at 1 Kampong Ampat.", "img": "slide28_3.png"})'>
+<div class="project-media"><img src="assets/slide28_3.png" alt=""></div>
+<div class="project-content"><span class="tag">Past</span><h3>8 Storey Ramp Up Light Industrial Development at 1 Kampong Ampat</h3><div class="metric">18,365.50 m² <small>GFA</small></div><p>Proposed erection of a block of 8-storey multi-user ramp-up light industry development (total 97 units) with a temporary industrial canteen at 1 Kampong Ampat.</p></div>
+</article><article class="project" data-year="Past" onclick='openProject({"year": "Past", "title": "ECC & NDCS", "metric": "GFA", "value": "149,380.45 m²", "desc": "Elective Care Centre: 21 operating theatres, 321 inpatient beds, specialist outpatient facilities with 103 consultation rooms. National Dental Centre Singapore: 128 dental operatories, space catered for 148 operatories at year 2035, 8 local anaesthesia operating theatres and 4 general anaesthesia operating theatres. HPB & IMH: Student Health Centre and School Dental Service / Child Guidance Clinic facilities.", "img": "slide29_3.png"})'>
+<div class="project-media"><img src="assets/slide29_3.png" alt=""></div>
+<div class="project-content"><span class="tag">Past</span><h3>ECC &amp; NDCS</h3><div class="metric">149,380.45 m² <small>GFA</small></div><p>Elective Care Centre: 21 operating theatres, 321 inpatient beds, specialist outpatient facilities with 103 consultation rooms. National Dental Centre Singapore: 128 dental operatories, space catered for 148 operatories at year 2035, 8 local anaesthesia operating theatres and 4 general anaesthesia operating theatres. HPB &amp; IMH: Student Health Centre and School Dental Service / Child Guidance Clinic facilities.</p></div>
+</article><article class="project" data-year="Past" onclick='openProject({"year": "Past", "title": "Kajima PAC HQ and Research Hub — KaTRIS", "metric": "GFA", "value": "13,088 m²", "desc": "Proposed erection of a block of 6-storey business park development with 1 level basement & ancillary facilities at Changi Business Park Crescent.", "img": "slide30_3.png"})'>
+<div class="project-media"><img src="assets/slide30_3.png" alt=""></div>
+<div class="project-content"><span class="tag">Past</span><h3>Kajima PAC HQ and Research Hub — KaTRIS</h3><div class="metric">13,088 m² <small>GFA</small></div><p>Proposed erection of a block of 6-storey business park development with 1 level basement &amp; ancillary facilities at Changi Business Park Crescent.</p></div>
+</article><article class="project" data-year="Past" onclick='openProject({"year": "Past", "title": "Singtel Data Center", "metric": "GFA", "value": "55,332.08 m²", "desc": "Proposed erection of a single-user data center with ancillary facilities and telecommunication usage at 7A Tuas Avenue 3.", "img": "slide31_3.png"})'>
+<div class="project-media"><img src="assets/slide31_3.png" alt=""></div>
+<div class="project-content"><span class="tag">Past</span><h3>Singtel Data Center</h3><div class="metric">55,332.08 m² <small>GFA</small></div><p>Proposed erection of a single-user data center with ancillary facilities and telecommunication usage at 7A Tuas Avenue 3.</p></div>
+</article><article class="project" data-year="Past" onclick='openProject({"year": "Past", "title": "Pan Pacific Orchard", "metric": "CFA", "value": "Approx. 45,000 m²", "desc": "Proposed new erection of 23 storey hotel development comprising 350 hotel units, other ancillary facilities and 2 basements on Lot 00170N with integrated drainage reserve, Plot 4 TS 25 at 10 Claymore Road (Orchard Planning Area).", "img": "slide32_5.png"})'>
+<div class="project-media"><img src="assets/slide32_5.png" alt=""></div>
+<div class="project-content"><span class="tag">Past</span><h3>Pan Pacific Orchard</h3><div class="metric">Approx. 45,000 m² <small>CFA</small></div><p>Proposed new erection of 23 storey hotel development comprising 350 hotel units, other ancillary facilities and 2 basements on Lot 00170N with integrated drainage reserve, Plot 4 TS 25 at 10 Claymore Road (Orchard Planning Area).</p></div>
+</article><article class="project" data-year="Past" onclick='openProject({"year": "Past", "title": "Alexandra Hospital A&A Project", "metric": "Site Area", "value": "121,560.6 m²", "desc": "Proposed decanting, demolition and improvement works to Alexandra Hospital at 378 Alexandra Road.", "img": "slide33_5.png"})'>
+<div class="project-media"><img src="assets/slide33_5.png" alt=""></div>
+<div class="project-content"><span class="tag">Past</span><h3>Alexandra Hospital A&amp;A Project</h3><div class="metric">121,560.6 m² <small>Site Area</small></div><p>Proposed decanting, demolition and improvement works to Alexandra Hospital at 378 Alexandra Road.</p></div>
+</article><article class="project" data-year="Past" onclick='openProject({"year": "Past", "title": "2-Storey Church with Attic at Yio Chu Kang", "metric": "GFA", "value": "1,256.70 m²", "desc": "Proposed new erection of a 2-storey church with attic at 167 Yio Chu Kang Road.", "img": "slide34_4.png"})'>
+<div class="project-media"><img src="assets/slide34_4.png" alt=""></div>
+<div class="project-content"><span class="tag">Past</span><h3>2-Storey Church with Attic at Yio Chu Kang</h3><div class="metric">1,256.70 m² <small>GFA</small></div><p>Proposed new erection of a 2-storey church with attic at 167 Yio Chu Kang Road.</p></div>
+</article>
+</div></div></section>
 
-          <div class="visual-card data-card">
-            <div class="mini-title">Cost Intelligence</div>
-            <div class="cost">
-              <strong>$8.42M</strong>
-              <span>+ 12.4%</span>
-            </div>
-            <div class="bar"><i></i></div>
-            <div style="margin-top:9px;font-size:10px;color:#7890a4;">Model-linked quantity & cost data</div>
-          </div>
-        </div>
-      </div>
-    </section>
+<section><div class="container"><div class="section-head reveal"><div><div class="kicker">Major Past Projects</div><h2>Selected delivery<br>references.</h2></div><p>Scope descriptions are retained from the proposal's major past projects list.</p></div>
+<div class="past-grid reveal"><div class="past-item"><b>SGH Elective Care Center</b><span>Proposed decanting, demolition and improvement works to Alexandra Hospital</span></div><div class="past-item"><b>Singtel Data Center</b><span>Certis Office — Tender BIM-Integrated Quantity Estimation</span></div><div class="past-item"><b>Kajima PAC HQ and Research Hub – KaTRIS</b><span>Revit Model Analysis</span></div><div class="past-item"><b>Kajima PAC HQ and Research Hub – KaTRIS</b><span>Build Quantity BIM Integrated Model for quantity comparisons to Tender Measured Quantity</span></div><div class="past-item"><b>Integrated Intermediate Care Hub</b><span>Measurement of Structure Works for Rebar and concrete Fluctuation Claim</span></div><div class="past-item"><b>8 Storey Multi-User Ramp Up Light Industrial Development at 1 Kampong Ampat</b><span>QS Consultant (Contract &amp; Budget Control, Tender Organization, Project Progress Payment Management and Final account)</span></div><div class="past-item"><b>23 Storey Hotel Development (Pan Pacific Orchard Singapore)</b><span>Monthly Progress Claim Preparation, Submission &amp; Follow Up</span></div><div class="past-item"><b>Singapore Bird Paradise (West Node &amp; Bird Park Wide)</b><span>Variation Order Works Processing (BQ, related drawing and other supporting document preparation based on Superintending Officer’s Instruction)</span></div><div class="past-item"><b>OBV-Mixed development at Orchard Boulevard</b><span>Final Account BIM-Integrated Quantity Estimation</span></div></div></div></section>
 
-    <div class="trust">
-      <div class="container trust-row">
-        <span>Building Information Modelling</span>
-        <span>Quantity Surveying</span>
-        <span>Cost Consultancy</span>
-        <span>Digital Construction</span>
-      </div>
-    </div>
+<section id="benefits"><div class="container">
+<div class="section-head reveal"><div><div class="kicker">06 · Advantages of QS BIM QTO</div><h2>Better quantity.<br>Better visibility.</h2></div><p>BIM QTO is presented in the proposal as a digital representation that connects architects, engineers, contractors and owners for collaboration and informed decisions.</p></div>
+<div class="benefits reveal">
+<div class="benefit"><div class="num">01</div><h3>Accurate Quantity Estimation</h3><p>Local rules, precise measurement, reduced errors, bidding competitiveness, waste reduction and budget optimization.</p></div>
+<div class="benefit"><div class="num">02</div><h3>Visualization & Traceability</h3><p>3D visualization and clear quantity origins support improved estimation.</p></div>
+<div class="benefit"><div class="num">03</div><h3>Efficiency & Productivity</h3><p>Streamlined process with reduced manual errors.</p></div>
+<div class="benefit"><div class="num">04</div><h3>Real-Time Updates</h3><p>Live model updates keep estimates current.</p></div>
+</div>
+<div class="panel reveal" style="margin-top:20px"><h3>BIM QTO Benefits</h3><div class="facts"><div class="fact"><b>Definition</b><span>Digital representation</span></div><div class="fact"><b>Stakeholders</b><span>Architects, engineers, contractors, owners</span></div><div class="fact"><b>Purpose</b><span>Collaboration, informed decisions</span></div><div class="fact"><b>Benefit</b><span>Accurate BQ, improved efficiency</span></div></div></div>
+</div></section>
 
-    <section class="about" id="about">
-      <div class="container about-grid">
-        <div>
-          <div class="section-kicker">About WeBIM</div>
-          <h2 class="section-title">Where digital information meets commercial intelligence.</h2>
-          <p class="section-lead">
-            WeBIM Consultancy Pte. Ltd. is built around a simple idea:
-            better project information leads to better commercial decisions.
-          </p>
-        </div>
+<section id="contact"><div class="container"><div class="contact reveal">
+<div><div class="kicker" style="color:#93c5fd">Contact Us</div><h2>Let's build the quantity story from the model.</h2><p>WeBIM Consultancy Pte Ltd</p></div>
+<div class="contact-list">
+<div class="contact-row"><small>Email</small><a href="mailto:enquiries@webimconsultancy.com">enquiries@webimconsultancy.com</a></div>
+<div class="contact-row"><small>Phone</small><a href="tel:+6561000818">+65 6100 0818</a></div>
+<div class="contact-row"><small>Office</small><span>67 Choa Chu Kang Loop, #03-02, Northvale, Singapore 689671</span></div>
+</div>
+</div></div></section>
+</main>
 
-        <div class="about-panel">
-          <h3>We connect the model, the measurement and the money.</h3>
-          <p>
-            Our approach brings BIM and Quantity Surveying closer together,
-            helping project teams understand scope, quantities, costs and
-            construction implications earlier and with greater confidence.
-          </p>
-          <ul class="check-list">
-            <li>Clearer quantities from coordinated digital models</li>
-            <li>Earlier visibility of design and cost changes</li>
-            <li>Structured information for procurement and tendering</li>
-            <li>Commercial support throughout the project lifecycle</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+<div class="modal" id="modal" onclick="if(event.target===this)closeModal()"><div class="modal-card"><button class="close" onclick="closeModal()">×</button><img id="modalImg" alt=""><div class="modal-body"><span class="tag" id="modalYear"></span><h2 id="modalTitle" style="font-size:34px;line-height:1.05;letter-spacing:-.05em"></h2><div id="modalMetric" style="font-weight:900;font-size:22px"></div><p id="modalDesc" style="color:#64748b"></p></div></div></div>
+<button class="top" id="topBtn" onclick="scrollTo({top:0,behavior:'smooth'})">↑</button>
+<div class="toast" id="toast">Copied</div>
 
-    <section class="services" id="services">
-      <div class="container">
-        <div class="service-head">
-          <div>
-            <div class="section-kicker">Our Services</div>
-            <h2 class="section-title">One consultancy.<br>Multiple project needs.</h2>
-          </div>
-          <p class="section-lead">
-            From design development to final account, WeBIM provides
-            integrated technical and commercial support.
-          </p>
-        </div>
+<script>
+function toggleService(btn){const box=btn.parentElement;box.classList.toggle('open');btn.querySelector('span').textContent=box.classList.contains('open')?'−':'+'}
+document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));btn.classList.add('active');const f=btn.dataset.filter;document.querySelectorAll('.project').forEach(p=>p.classList.toggle('hide',f!=='all'&&p.dataset.year!==f))}))
+function openProject(p){document.getElementById('modal').classList.add('show');document.getElementById('modalYear').textContent=p.year;document.getElementById('modalTitle').textContent=p.title;document.getElementById('modalMetric').textContent=p.value+' · '+p.metric;document.getElementById('modalDesc').textContent=p.desc;const im=document.getElementById('modalImg');if(p.img){im.src='assets/'+p.img;im.style.display='block'}else{im.removeAttribute('src');im.style.display='none'}}
+function closeModal(){document.getElementById('modal').classList.remove('show')}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()})
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.08});document.querySelectorAll('.reveal').forEach(x=>io.observe(x))
+const topBtn=document.getElementById('topBtn');window.addEventListener('scroll',()=>topBtn.style.display=scrollY>700?'block':'none')
+const sections=[...document.querySelectorAll('main section[id]')], navlinks=[...document.querySelectorAll('.links a')];const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){navlinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-35% 0px -55% 0px'});sections.forEach(s=>so.observe(s))
 
-        <div class="service-grid">
-          <article class="service">
-            <div class="service-num">01 / BIM</div>
-            <h3>BIM Modelling</h3>
-            <p>Architectural, structural and MEP modelling with project information structured for coordination and delivery.</p>
-          </article>
+/* Interactive motion enhancements */
+const root=document.documentElement, progress=document.querySelector('.scroll-progress'), nav=document.querySelector('.nav');
+const dot=document.querySelector('.cursor-dot'), ring=document.querySelector('.cursor-ring');
+let rx=0,ry=0,dx=0,dy=0;
+window.addEventListener('mousemove',e=>{
+  root.style.setProperty('--mx',e.clientX+'px');root.style.setProperty('--my',e.clientY+'px');
+  dx=e.clientX;dy=e.clientY;
+  document.querySelectorAll('[data-magnetic]').forEach(el=>{
+    const r=el.getBoundingClientRect(), x=(e.clientX-(r.left+r.width/2))/12, y=(e.clientY-(r.top+r.height/2))/12;
+    el.style.transform=`translate(${x}px,${y}px)`;
+  });
+});
+function cursorLoop(){rx+=(dx-rx)*.16;ry+=(dy-ry)*.16;dot.style.left=dx+'px';dot.style.top=dy+'px';ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(cursorLoop)}cursorLoop();
+document.querySelectorAll('a,button,.project,.client').forEach(el=>{el.addEventListener('mouseenter',()=>ring.classList.add('big'));el.addEventListener('mouseleave',()=>{ring.classList.remove('big');el.style.transform=''})});
+document.querySelectorAll('.btn').forEach(el=>el.setAttribute('data-magnetic','1'));
 
-          <article class="service">
-            <div class="service-num">02 / BIM</div>
-            <h3>BIM Coordination</h3>
-            <p>Model review, clash detection and interdisciplinary coordination to reduce construction uncertainty.</p>
-          </article>
+function onScroll(){
+ const h=document.documentElement.scrollHeight-innerHeight;
+ progress.style.width=(scrollY/h*100)+'%';
+ nav.classList.toggle('scrolled',scrollY>30);
+}
+window.addEventListener('scroll',onScroll,{passive:true});onScroll();
 
-          <article class="service">
-            <div class="service-num">03 / QS</div>
-            <h3>Quantity Surveying</h3>
-            <p>Measurement, bills of quantities, progress valuations, variations, cost reporting and final accounts.</p>
-          </article>
+/* Animated numbers */
+const counters=document.querySelectorAll('.counter');
+const counterIO=new IntersectionObserver(entries=>{
+ entries.forEach(entry=>{
+  if(!entry.isIntersecting || entry.target.dataset.done)return;
+  entry.target.dataset.done='1';
+  const el=entry.target,target=+el.dataset.target,suffix=el.dataset.suffix||'';
+  const start=performance.now(),duration=1100;
+  function tick(now){const p=Math.min((now-start)/duration,1), eased=1-Math.pow(1-p,3);el.textContent=Math.round(target*eased).toLocaleString()+suffix;if(p<1)requestAnimationFrame(tick)}
+  requestAnimationFrame(tick);
+ });
+},{threshold:.7});counters.forEach(x=>counterIO.observe(x));
 
-          <article class="service">
-            <div class="service-num">04 / COST</div>
-            <h3>Cost Consultancy</h3>
-            <p>Feasibility studies, cost planning, budget control and independent commercial advice throughout design.</p>
-          </article>
+/* Staggered reveal */
+document.querySelectorAll('.values,.benefits,.projects,.past-grid,.clients,.services').forEach(group=>{
+ [...group.children].forEach((child,i)=>{child.style.transitionDelay=(i*55)+'ms';child.classList.add('reveal')});
+});
+document.querySelectorAll('.reveal').forEach(x=>io.observe(x));
 
-          <article class="service">
-            <div class="service-num">05 / TENDER</div>
-            <h3>Tender & Procurement</h3>
-            <p>Tender documentation, BOQ preparation, tender analysis and commercial comparison to support procurement decisions.</p>
-          </article>
+/* 3D tilt on cards */
+document.querySelectorAll('.project,.value,.benefit,.panel,.client').forEach(card=>{
+ card.addEventListener('mousemove',e=>{
+  if(innerWidth<901)return;
+  const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+  card.style.transform=`perspective(800px) rotateX(${(-y*4).toFixed(2)}deg) rotateY(${(x*5).toFixed(2)}deg) translateY(-4px)`;
+ });
+ card.addEventListener('mouseleave',()=>card.style.transform='');
+});
 
-          <article class="service">
-            <div class="service-num">06 / DIGITAL</div>
-            <h3>5D & Digital Construction</h3>
-            <p>Connecting quantities and cost information with BIM workflows for more transparent project decision-making.</p>
-          </article>
-        </div>
-      </div>
-    </section>
+/* Hero mouse parallax */
+const heroCard=document.querySelector('.hero-card');
+heroCard?.addEventListener('mousemove',e=>{
+ if(innerWidth<901)return;
+ const r=heroCard.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+ heroCard.style.transform=`perspective(1000px) rotateX(${(-y*7).toFixed(2)}deg) rotateY(${(x*9).toFixed(2)}deg) scale(1.015)`;
+});
+heroCard?.addEventListener('mouseleave',()=>heroCard.style.transform='');
 
-    <section class="integration" id="bim">
-      <div class="container integration-grid">
-        <div>
-          <div class="section-kicker">Our Advantage</div>
-          <h2 class="section-title">BIM + QS.<br>A more connected way to manage cost.</h2>
-          <p class="section-lead">
-            We translate digital building information into measurable,
-            commercial information — helping clients see what is being
-            built, how much it represents and how changes affect cost.
-          </p>
+/* Make section headings reveal line-by-line */
+document.querySelectorAll('.section-head h2').forEach(h=>{
+ const parts=h.innerHTML.split('<br>');
+ h.innerHTML=parts.map((p,i)=>`<span class="line" style="transition-delay:${i*90}ms">${p}</span>`).join('');
+});
 
-          <div class="flow">
-            <div class="flow-item"><strong>01 · Model</strong><span>Build reliable digital information</span></div>
-            <div class="flow-item"><strong>02 · Measure</strong><span>Extract and validate quantities</span></div>
-            <div class="flow-item"><strong>03 · Price</strong><span>Develop cost and tender information</span></div>
-            <div class="flow-item"><strong>04 · Control</strong><span>Monitor changes and commercial impact</span></div>
-          </div>
-        </div>
+/* Tiny click ripple */
+document.addEventListener('click',e=>{
+ const t=e.target.closest('button,.btn,.filter');
+ if(!t)return;
+ const r=t.getBoundingClientRect(),s=document.createElement('span');
+ s.style.cssText=`position:fixed;left:${e.clientX}px;top:${e.clientY}px;width:10px;height:10px;border:2px solid rgba(37,99,235,.35);border-radius:50%;pointer-events:none;z-index:2000;transform:translate(-50%,-50%);animation:ripple .6s ease-out forwards`;
+ document.body.appendChild(s);setTimeout(()=>s.remove(),650);
+});
+const rippleStyle=document.createElement('style');rippleStyle.textContent='@keyframes ripple{to{width:90px;height:90px;opacity:0}}';document.head.appendChild(rippleStyle);
 
-        <div class="integration-visual">
-          <div class="ring"></div>
-          <div class="ring r2"></div>
-          <div class="hub">BIM<br>+<br>QS</div>
-          <div class="node n1">3D MODEL</div>
-          <div class="node n2">QUANTITIES</div>
-          <div class="node n3">COST PLAN</div>
-          <div class="node n4">TENDER</div>
-          <div class="node n5">CONTROL</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="projects" id="projects">
-      <div class="container">
-        <div class="section-kicker">Selected Work</div>
-        <h2 class="section-title">Built around real project challenges.</h2>
-        <p class="section-lead">
-          Replace these placeholders with your actual project photographs,
-          project values, services and outcomes.
-        </p>
-
-        <div class="project-grid">
-          <article class="project">
-            <div class="project-info">
-              <span>COMMERCIAL · BIM + QS</span>
-              <h3>Commercial Development</h3>
-            </div>
-          </article>
-
-          <article class="project">
-            <div class="project-info">
-              <span>RESIDENTIAL · COST</span>
-              <h3>Residential Development</h3>
-            </div>
-          </article>
-
-          <article class="project">
-            <div class="project-info">
-              <span>INSTITUTIONAL · BIM</span>
-              <h3>Institutional Project</h3>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="stats">
-      <div class="container stats-grid">
-        <div class="stat"><strong>10+</strong><span>Years Experience</span></div>
-        <div class="stat"><strong>50+</strong><span>Projects Supported</span></div>
-        <div class="stat"><strong>5D</strong><span>Digital Cost Thinking</span></div>
-        <div class="stat"><strong>1</strong><span>Integrated Approach</span></div>
-      </div>
-    </section>
-
-    <section class="cta" id="contact">
-      <div class="container">
-        <div class="cta-box">
-          <div>
-            <div class="section-kicker">Let's Work Together</div>
-            <h2>Have a project?<br>Let's sharpen the cost.</h2>
-            <p>Tell us about your project and the challenges you are facing.</p>
-          </div>
-          <a class="btn btn-primary" href="mailto:hello@webim.com.sg">Request a Consultation →</a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    <div class="container">
-      <div class="footer-top">
-        <div>
-          <img class="footer-logo" src="logo.png" alt="WeBIM Consultancy Pte. Ltd.">
-          <p class="footer-copy">
-            BIM, Quantity Surveying and Construction Consultancy —
-            helping project teams make sharper commercial decisions.
-          </p>
-        </div>
-
-        <div>
-          <h4>Explore</h4>
-          <div class="footer-links">
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#bim">BIM + QS</a>
-            <a href="#projects">Projects</a>
-          </div>
-        </div>
-
-        <div>
-          <h4>Contact</h4>
-          <div class="footer-links">
-            <a href="mailto:hello@webim.com.sg">hello@webim.com.sg</a>
-            <p>Singapore</p>
-            <p>WeBIM Consultancy Pte. Ltd.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="copyright">
-        <span>© 2026 WeBIM Consultancy Pte. Ltd. All Rights Reserved.</span>
-        <span>Sharpen Your Cost.</span>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 20);
-    });
-
-    const menuBtn = document.getElementById('menuBtn');
-    const links = document.querySelector('.links');
-
-    menuBtn.addEventListener('click', () => {
-      const open = links.style.display === 'flex';
-      links.style.display = open ? '' : 'flex';
-      if (!open) {
-        links.style.position = 'absolute';
-        links.style.top = '82px';
-        links.style.left = '14px';
-        links.style.right = '14px';
-        links.style.padding = '18px';
-        links.style.flexDirection = 'column';
-        links.style.alignItems = 'stretch';
-        links.style.background = '#fff';
-        links.style.border = '1px solid #dfeaf3';
-        links.style.borderRadius = '16px';
-        links.style.boxShadow = '0 20px 40px rgba(26,81,126,.12)';
-      }
-    });
-  </script>
-</body>
-</html>
+</script>
+</body></html>
